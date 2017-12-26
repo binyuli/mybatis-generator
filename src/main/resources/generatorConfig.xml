@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+
+    <context id="aim-generator-mybatis3" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <plugin type="bz.sunlight.mybatis.generator.plugins.BaseMapperGeneratorPlugin" />
+        <plugin type="bz.sunlight.mybatis.generator.plugins.MySQLLimitPlugin" />
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.21.11:3306/vr-uem" userId="vr-uem" password="vr123">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="bz.sunlight.entity" targetProject="src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="bz.sunlight.mapper" targetProject="src/main/resources">
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="bz.sunlight.dao" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="exampleMethodVisibility" value="public" />
+        </javaClientGenerator>
+
+
+        <table schema="vr-uem" tableName="%">
+            <columnOverride column="status_name_cn" property="statusNameCN" />
+            <columnOverride column="status_name_en" property="statusNameEN" />
+            <columnOverride column="attribute_name_cn" property="attributeNameCN" />
+            <columnOverride column="attribute_name_en" property="attributeNameEN" />
+            <columnOverride column="attribute_value_cn" property="attributeValueCN" />
+            <columnOverride column="attribute_value_en" property="attributeValueEN" />
+            <!-- 下面的方式无法完成替换 -->
+            <!--<columnRenamingRule searchString="_cn" replaceString="CN" />-->
+            <!--<columnRenamingRule searchString="_cn" replaceString="_CN" />-->
+
+            <!-- 若 datetime 类型需要精确到小数点后3位以上，则需添加以下配置 -->
+            <columnOverride column="start_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+            <columnOverride column="end_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
