@@ -8,7 +8,7 @@
         <property name="javaFileEncoding" value="UTF-8"/>
 
         <plugin type="bz.sunlight.mybatis.generator.plugins.BaseMapperGeneratorPlugin" />
-        <plugin type="bz.sunlight.mybatis.generator.plugins.MySQLLimitPlugin" />
+        <plugin type="bz.sunlight.mybatis.generator.plugins.LimitPluginForMysql" />
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
 
         <commentGenerator>
