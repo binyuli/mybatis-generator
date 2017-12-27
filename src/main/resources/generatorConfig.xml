@@ -32,19 +32,20 @@
 
 
         <table schema="vr-uem" tableName="%">
-            <columnOverride column="status_name_cn" property="statusNameCN" />
-            <columnOverride column="status_name_en" property="statusNameEN" />
-            <columnOverride column="attribute_name_cn" property="attributeNameCN" />
-            <columnOverride column="attribute_name_en" property="attributeNameEN" />
-            <columnOverride column="attribute_value_cn" property="attributeValueCN" />
-            <columnOverride column="attribute_value_en" property="attributeValueEN" />
+            <!-- 特殊字段名修正 -->
+            <!--<columnOverride column="status_name_cn" property="statusNameCN" />-->
+            <!--<columnOverride column="status_name_en" property="statusNameEN" />-->
+            <!--<columnOverride column="attribute_name_cn" property="attributeNameCN" />-->
+            <!--<columnOverride column="attribute_name_en" property="attributeNameEN" />-->
+            <!--<columnOverride column="attribute_value_cn" property="attributeValueCN" />-->
+            <!--<columnOverride column="attribute_value_en" property="attributeValueEN" />-->
             <!-- 下面的方式无法完成替换 -->
             <!--<columnRenamingRule searchString="_cn" replaceString="CN" />-->
             <!--<columnRenamingRule searchString="_cn" replaceString="_CN" />-->
 
             <!-- 若 datetime 类型需要精确到小数点后3位以上，则需添加以下配置 -->
-            <columnOverride column="start_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
-            <columnOverride column="end_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+            <!--<columnOverride column="start_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+            <!--<columnOverride column="end_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
         </table>
 
     </context>
